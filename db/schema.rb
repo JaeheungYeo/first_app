@@ -11,13 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131223073145) do
+ActiveRecord::Schema.define(version: 20131224044400) do
 
-  create_table "users", force: true do |t|
+  create_table "restaurants", force: true do |t|
     t.string   "name"
-    t.string   "email"
+    t.float    "longitude"
+    t.float    "latitude"
+    t.float    "rating"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "reference"
+    t.string   "device_id"
+    t.string   "device_description"
   end
+
+  add_index "restaurants", ["latitude"], name: "index_restaurants_on_latitude"
+  add_index "restaurants", ["longitude"], name: "index_restaurants_on_longitude"
+  add_index "restaurants", ["name"], name: "index_restaurants_on_name"
+  add_index "restaurants", ["rating"], name: "index_restaurants_on_rating"
+  add_index "restaurants", ["reference"], name: "index_restaurants_on_reference", unique: true
 
 end

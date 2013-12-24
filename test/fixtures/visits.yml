@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: visits
+#
+#  id                 :integer          not null, primary key
+#  device_id          :string(255)
+#  device_description :string(255)
+#  restaurant_id      :integer
+#  created_at         :datetime
+#  updated_at         :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  device_id: MyString
+  device_description: MyString
+  restaurant_id: 1
+
+two:
+  device_id: MyString
+  device_description: MyString
+  restaurant_id: 1
